@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class scan extends Model
 {
-    use HasFactory;
+    use HasFactory; 
+    protected $fillable = [
+        'id',
+        'qr_code',
+        'scan_count',
+    ];
 }

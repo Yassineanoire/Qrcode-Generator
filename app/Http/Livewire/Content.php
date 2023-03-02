@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Livewire;
+
+use App\Models\scan;
 use Illuminate\Encryption\EncryptionServiceProvider;
 use Illuminate\Http\FileHelpers;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+
 class Content extends Component
 {
     use WithFileUploads;
@@ -43,15 +46,21 @@ class Content extends Component
     public $frd=false;
     public $tab = array();
     public $facebook;
+    public $adress;
+    public $amount;
     public $twitter;
     public $instagram;
     public $youtube;
     public $img;
     public $la='\pp.png';
-    
+    public $idd;
+    public $bol=false;
 
     public function render()
     {
+        if(empty($this->input))
+        $this->bol=false;
+       
 
         $this->R=hexdec(substr($this->color,1,2));
         $this->G=hexdec(substr($this->color,3,2));
@@ -68,7 +77,8 @@ class Content extends Component
         $this->G3,'B3',$this->B3,$this->test,'test',$this->frd,'frd','text',$this->text,'subject',$this->subject,
         'to',$this->to,'body',$this->body,'phone',$this->phone,'sms',$this->sms,'phoneN',$this->phoneN,'ssid',$this->ssid,
     'password',$this->password,'encruption',$this->encruption,'facebook',$this->facebook,'twitter',$this->twitter,'instagram'
-    ,$this->instagram,'youtube',$this->youtube,'margin',$this->margin,'style',$this->style,'grd',$this->grd,'eye',$this->eye,'ext',$this->ext,'la',$this->la);
+    ,$this->instagram,'youtube',$this->youtube,'margin',$this->margin,'style',$this->style,'grd',$this->grd,'eye',
+    $this->eye,'ext',$this->ext,'la',$this->la,'bol',$this->bol,'idd',$this->idd,'adress',$this->adress,'amount',$this->amount);
     
     }
 public function change(){
@@ -90,6 +100,8 @@ $this->facebook="";
 $this->twitter="";
 $this->instagram="";
 $this->youtube="";
+$this->amount="";
+$this->adress="";
 
 }
 public function dot(){
@@ -132,6 +144,17 @@ public function addlogo(){
     public function removeLogo(){
         $this->la='\pp.png';
         $this->img='';
+    }
+    public function store(){
+     if(!empty($this->input))
+            $user = new scan();
+            $user->qr_code=$this->input;
+            $user->scan_count=0;
+            $user->save();
+            $this->idd='/'.$user->id;
+          
+            
+        
     }
 
 }

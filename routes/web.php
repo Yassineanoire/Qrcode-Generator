@@ -1,9 +1,9 @@
 <?php
-
-
+use App\Models\scan;
 use App\Http\Controllers\test;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +22,30 @@ Route::get('/', function () {
 Route::get('/qrcode', function () {
     return view('welcome2');
 })->name('qrcodee');
-
+Route::get('vue',function(){
+    $test=scan::where('id',session('id'))->first();
+    if($test)
+   return view('vuee',['data'=>$test]);
+})->name('vue');
 Route::any('login',[test::class,'login'])->name('login');
 Route::any('qrcode',[test::class,'direct'])->name('qrcode');
 Route::post('store',[test::class,'store'])->name('store');
-Route::view('vuee','vuee');
+// Route::get('vue',function(){
+// $test=scan::where('id',session::get('id'))->first();
+// Session::put('scancount',$test->scan_count);
+// });
+Route::get('vue/{id}',function($id){
+    $test=scan::where('id',$id)->first();
+    //  Session::put('scancount',$test->scan_count);
+     Session::put('id',$id);
+    return redirect()->route('vue');
+});
+Route::any('/{id}',function ($id){
+$test=scan::where('id',$id)->first();
+$test->scan_count++;
+$test->save();
+return redirect()->away('https://'.$test->qr_code);
+});
 
 
 // Route::get('hh',function () {

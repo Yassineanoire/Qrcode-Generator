@@ -126,8 +126,8 @@
             <div class="service ">
                 <img src="images/pin.png " alt=" ">
                 <h2>Adresses</h2>
-                <p>France-Paris</p>
-                <p>Bénin-Cotonou</p>
+                <p>Morroco</p>
+                <p>Berrechid</p>
             </div>
             <div class="service ">
                 <img src="images/email.png " alt=" ">
@@ -139,16 +139,12 @@
                 <img src="images/call.png " alt=" ">
                 <h2>Numbers</h2>
                 <p>0774950554</p>
-
             </div>
-
             <hr>
         </div>
 
         <p class="footer_text ">Réalisé par <span>Yassine Aboulanouar</span> </p>
     </footer>
-
-
     <script>
         var small_menu = document.querySelector('.toggle_menu')
         var menu = document.querySelector('.menu')
