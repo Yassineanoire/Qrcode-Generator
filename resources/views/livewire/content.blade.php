@@ -34,7 +34,11 @@
            <img src='\images\down.png' alt="" srcset="" style="width:15px;height:10px;" id="Content" wire:ignore>
       </div>
      <div id="url1" wire:ignore>
+<<<<<<< HEAD
         <input type="text" placeholder="Enter a value:yassineAboulanouar.com" value="hh" wire:model.debounce.500ms='input' class="Content1"> 
+=======
+        <input type="text" placeholder="Enter a value:https:/yassineAboulanouar.com" value="hh" wire:model.debounce.500ms='input' class="Content1"> 
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
       </div>
        <div id="text1" style="display: none" wire:ignore>
         <input type="text" placeholder="Enter a Text"  style="height: 200px" wire:model='text' class="Content1">
@@ -60,8 +64,12 @@
         
        </div>
        <div id="bitcoin1" style="display: none" wire:ignore>
+<<<<<<< HEAD
         <input type="text" placeholder="adress" class="Content1" wire:model='adress'>
         <input type="text" placeholder="amount" class="Content1" wire:model='amount'>
+=======
+        <input type="text" placeholder="bitcoin" class="Content1">
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
        </div>
        <div id="facebook1" style="display: none" wire:ignore>
         <input type="text" placeholder="facebook" wire:model="facebook" class="Content1">
@@ -166,7 +174,11 @@
     <div class="qrCodeDiv">
       @if(empty($input) && empty($text) && (empty($subject) || empty($to) || empty($body)) && empty($phone) && 
       (empty($sms) || empty($phoneN)) && (empty($ssid) || empty($password) || empty($encruption)) && empty($facebook) && empty($twitter) && empty($youtube) &&
+<<<<<<< HEAD
       empty($instagram)&& (empty($amount) || empty($adress))) 
+=======
+      empty($instagram)) 
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
         {{QrCode::size('300')->eye($eye)->gradient(255,0,0,0,0,255,$grd,$opacity)->margin(100-$margin)->style($style)->generate("hola")}}
       {{QrCode::size('300')->format('png')->merge('\storage\app\qrcodes'.$la, 0.2)->eye($eye)->gradient(255,0,0,0,0,255,$grd,$opacity)->margin(100-$margin)->style($style)->generate("hola",public_path('images/qrcode.'.$ext))}}
     {{-- {{QrCode::generate('hh',public_path('images/qrcode.'.$ext))}} --}}
@@ -178,6 +190,7 @@
      
     @if(!empty($input) && $frd==true)
      
+<<<<<<< HEAD
     {{ QrCode::gradient($R1,$G1,$B1,$R3,$G3,$B3,$grd,$opacity)->format('png')->merge('\storage\app\qrcodes'.$la, 0.2)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->size('300')->style($style)->margin(100-$margin)->generate('https://'.$input,public_path('images/qrcode.'.$ext))}}
     {{ QrCode::gradient($R1,$G1,$B1,$R3,$G3,$B3,$grd,$opacity)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->size('300')->style($style)->margin(100-$margin)->generate('https://'.$input)}}
       @elseif (!empty($input) && $bol==false)
@@ -186,6 +199,15 @@
     @elseif(!empty($input) && $bol==true)
     {{ QrCode::color($R1,$G1,$B1,$opacity)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->size('300')->margin(100-$margin)->style($style)->generate('http://127.0.0.1:8000'.$idd,public_path('images/lala.svg'))}}
     {{ QrCode::color($R1,$G1,$B1,$opacity)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->size('300')->margin(100-$margin)->style($style)->generate('http://127.0.0.1:8000'.$idd)}}
+=======
+    {{ QrCode::gradient($R1,$G1,$B1,$R3,$G3,$B3,$grd,$opacity)->format('png')->merge('\storage\app\qrcodes'.$la, 0.2)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->size('300')->style($style)->margin(100-$margin)->generate($input,public_path('images/qrcode.'.$ext))}}
+    {{ QrCode::gradient($R1,$G1,$B1,$R3,$G3,$B3,$grd,$opacity)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->size('300')->style($style)->margin(100-$margin)->generate($input)}}
+      @elseif (!empty($input))
+      
+      {{ QrCode::color($R1,$G1,$B1,$opacity)->eye($eye)->format('png')->merge('\storage\app\qrcodes'.$la, 0.2)->backgroundColor($R,$G,$B,$opacity)->size('300')->margin(100-$margin)->style($style)->generate($input,public_path('images/qrcode.'.$ext))}}
+      {{ QrCode::color($R1,$G1,$B1,$opacity)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->size('300')->margin(100-$margin)->style($style)->generate($input)}}
+
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
 
       @endif
     </div>
@@ -262,6 +284,7 @@
       @endif
     </div>
     <div id="qrCodeDiv">
+<<<<<<< HEAD
       @if(!empty($amount) && !empty($adress) && $frd==true)
       {{ QrCode::gradient($R1,$G1,$B1,$R3,$G3,$B3,$grd,$opacity)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->style($style)->size('300')->margin(100-$margin)->BTC($adress,$amount)}}
       {{ QrCode::gradient($R1,$G1,$B1,$R3,$G3,$B3,$grd,$opacity)->format('png')->merge('\storage\app\qrcodes'.$la, 0.2)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->style($style)->size('300')->margin(100-$margin)->generate($adress.$amount,public_path('images/qrcode.'.$ext))}}
@@ -272,6 +295,8 @@
       @endif
     </div>
     <div id="qrCodeDiv">
+=======
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
       @if(!empty($twitter) && $frd==true)
       {{ QrCode::gradient($R1,$G1,$B1,$R3,$G3,$B3,$grd,$opacity)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->style($style)->size('300')->margin(100-$margin)->generate($twitter)}}
       {{ QrCode::gradient($R1,$G1,$B1,$R3,$G3,$B3,$grd,$opacity)->format('png')->merge('\storage\app\qrcodes'.$la, 0.2)->eye($eye)->backgroundColor($R,$G,$B,$opacity)->style($style)->size('300')->margin(100-$margin)->generate($twitter,public_path('images/qrcode.'.$ext))}}
@@ -313,6 +338,7 @@
 <p>JPEG</p>
   </div>
 </div>
+<<<<<<< HEAD
 <div wire:ignore style="cursor: pointer;margin-top:20px">
   <input wire:click='store' type="checkbox" name="" style="width: 50px; margin-left:2px" wire:model='bol' >
   
@@ -323,6 +349,8 @@
   <a style="color:#393736" href="{{asset('http://127.0.0.1:8000/vue'.$idd)}}">Tracking</a>
   @endif
 </button>
+=======
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
       </div>
     
   </div>
@@ -686,6 +714,11 @@ for(var j=0; j<data.length; j++){
     // document.getElementById(data[j].id).style.fontSize="15px";
     document.getElementById(this.id).style.borderBottom="0.3rem solid";
     document.getElementById(data[j].id).style.borderBottom="none";
+<<<<<<< HEAD
+=======
+   
+
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
     // alert(i);
     // alert(j);
 }

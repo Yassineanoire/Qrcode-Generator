@@ -1,13 +1,19 @@
 <?php
 
 namespace App\Http\Livewire;
+<<<<<<< HEAD
 
 use App\Models\scan;
+=======
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
 use Illuminate\Encryption\EncryptionServiceProvider;
 use Illuminate\Http\FileHelpers;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
 class Content extends Component
 {
     use WithFileUploads;
@@ -46,13 +52,17 @@ class Content extends Component
     public $frd=false;
     public $tab = array();
     public $facebook;
+<<<<<<< HEAD
     public $adress;
     public $amount;
+=======
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
     public $twitter;
     public $instagram;
     public $youtube;
     public $img;
     public $la='\pp.png';
+<<<<<<< HEAD
     public $idd;
     public $bol=false;
 
@@ -61,6 +71,12 @@ class Content extends Component
         if(empty($this->input))
         $this->bol=false;
        
+=======
+    
+
+    public function render()
+    {
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
 
         $this->R=hexdec(substr($this->color,1,2));
         $this->G=hexdec(substr($this->color,3,2));
@@ -77,8 +93,12 @@ class Content extends Component
         $this->G3,'B3',$this->B3,$this->test,'test',$this->frd,'frd','text',$this->text,'subject',$this->subject,
         'to',$this->to,'body',$this->body,'phone',$this->phone,'sms',$this->sms,'phoneN',$this->phoneN,'ssid',$this->ssid,
     'password',$this->password,'encruption',$this->encruption,'facebook',$this->facebook,'twitter',$this->twitter,'instagram'
+<<<<<<< HEAD
     ,$this->instagram,'youtube',$this->youtube,'margin',$this->margin,'style',$this->style,'grd',$this->grd,'eye',
     $this->eye,'ext',$this->ext,'la',$this->la,'bol',$this->bol,'idd',$this->idd,'adress',$this->adress,'amount',$this->amount);
+=======
+    ,$this->instagram,'youtube',$this->youtube,'margin',$this->margin,'style',$this->style,'grd',$this->grd,'eye',$this->eye,'ext',$this->ext,'la',$this->la);
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
     
     }
 public function change(){
@@ -100,8 +120,11 @@ $this->facebook="";
 $this->twitter="";
 $this->instagram="";
 $this->youtube="";
+<<<<<<< HEAD
 $this->amount="";
 $this->adress="";
+=======
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
 
 }
 public function dot(){
@@ -145,6 +168,7 @@ public function addlogo(){
         $this->la='\pp.png';
         $this->img='';
     }
+<<<<<<< HEAD
     public function store(){
      if(!empty($this->input))
             $user = new scan();
@@ -156,6 +180,8 @@ public function addlogo(){
             
         
     }
+=======
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
 
 }
 

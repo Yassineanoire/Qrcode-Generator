@@ -1,9 +1,17 @@
 <?php
+<<<<<<< HEAD
 use App\Models\scan;
 use App\Http\Controllers\test;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+=======
+
+
+use App\Http\Controllers\test;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Route;
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +25,16 @@ use Illuminate\Support\Facades\Session;
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('welcome1');
+=======
+    return view('welcome');
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
 });
 Route::get('/qrcode', function () {
     return view('welcome2');
 })->name('qrcodee');
+<<<<<<< HEAD
 Route::get('vue',function(){
     $test=scan::where('id',session('id'))->first();
     if($test)
@@ -46,6 +59,13 @@ $test->scan_count++;
 $test->save();
 return redirect()->away('https://'.$test->qr_code);
 });
+=======
+
+Route::any('login',[test::class,'login'])->name('login');
+Route::any('qrcode',[test::class,'direct'])->name('qrcode');
+Route::post('store',[test::class,'store'])->name('store');
+Route::view('vuee','vuee');
+>>>>>>> 1d19bc00479be9365adf9fd9dae2a08bb8b94c04
 
 
 // Route::get('hh',function () {
